@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Modules | ReproMed Series</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg py-3 sticky-top bg-transparent-custom">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <div class="logo-box d-flex justify-content-center align-items-center rounded me-2">
+                    R
+                </div>
+                <span class="brand-text fw-bold">ReproMed <span class="brand-text-purple">Series</span></span>
+            </a>
+            
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainNav" aria-controls="mainNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="mainNav" aria-labelledby="mainNavLabel">
+                
+                <div class="offcanvas-header border-bottom">
+                    <h5 class="offcanvas-title fw-bold text-dark-green" id="mainNavLabel">Menu</h5>
+                    <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav ms-auto align-items-lg-center gap-3 gap-lg-4">
+                        <li class="nav-item">
+                            <a class="nav-link fw-medium" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-active fw-semibold" href="modules.html">Modules</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-medium" href="#">Speakers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-medium" href="#">Quiz</a>
+                        </li>
+                        <li class="nav-item ms-lg-2 mt-3 mt-lg-0">
+                            <a class="btn btn-outline-nav rounded-pill px-4 fw-semibold w-100 w-lg-auto" href="#" id="loginBtn">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="module-header-section py-4 py-lg-5">
+        <div class="container">
+            <div class="row align-items-end">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="breadcrumb-custom mb-2">
+                        <a href="index.html" class="text-decoration-none text-muted breadcrumb-link">Home</a> / 
+                        <span class="text-dark-green fw-semibold">Course Modules</span>
+                    </div>
+                    <h1 class="fw-bolder text-dark-green mb-0">E-Learning Curriculum</h1>
+                </div>
+                <div class="col-lg-6 d-flex justify-content-lg-end">
+                    <div class="overall-progress-card bg-white border shadow-sm rounded-4 p-4">
+                        <div class="d-flex justify-content-between mb-3">
+                            <span class="fw-bold text-dark-green module-text-sm">Overall Progress</span>
+                            <span class="fw-bold text-primary-green module-text-sm">2/6 Modules Complete</span>
+                        </div>
+                        <div class="progress custom-progress-bar">
+                            <div class="progress-bar bg-primary-green custom-progress-width-0" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="modules-grid-section pb-5">
+        <div class="container">
+            <div class="row g-4">
+                
+                <div class="col-lg-6">
+                    <div class="module-card card-completed bg-white shadow-sm p-4 h-100">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge rounded-pill badge-primary-green">MODULE 01</span>
+                            <span class="badge rounded-pill badge-light-purple">Completed</span>
+                        </div>
+                        <h4 class="fw-bold text-dark-green mb-4">Basics of Reproductive Medicine</h4>
+                        
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <div class="d-flex align-items-center">
+                                <img src="https://ui-avatars.com/api/?name=Doc&background=random" alt="Speaker" class="speaker-avatar me-3 border">
+                                <div>
+                                    <span class="d-block text-muted module-text-xs">Speaker</span>
+                                    <span class="d-block fw-bold text-dark-green module-text-sm">Dr. Robert Chen</span>
+                                </div>
+                            </div>
+                            <span class="text-muted module-text-sm">45 mins</span>
+                        </div>
+                        
+                        <a href="#" class="btn btn-primary-custom w-100 fw-semibold mb-4 btn-watch-action">Watch Again</a>
+                        
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="text-muted module-text-xs text-uppercase fw-bold">PROGRESS</span>
+                            <span class="text-muted module-text-xs fw-bold">100%</span>
+                        </div>
+                        <div class="progress custom-progress-bar">
+                            <div class="progress-bar bg-primary-green custom-progress-width-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="module-card card-completed bg-white shadow-sm p-4 h-100">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge rounded-pill badge-primary-green">MODULE 02</span>
+                            <span class="badge rounded-pill badge-light-purple">Completed</span>
+                        </div>
+                        <h4 class="fw-bold text-dark-green mb-4">Endocrinology of Reproduction</h4>
+                        
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <div class="d-flex align-items-center">
+                                <img src="https://ui-avatars.com/api/?name=Doc&background=random" alt="Speaker" class="speaker-avatar me-3 border">
+                                <div>
+                                    <span class="d-block text-muted module-text-xs">Speaker</span>
+                                    <span class="d-block fw-bold text-dark-green module-text-sm">Dr. Sarah Jenkins</span>
+                                </div>
+                            </div>
+                            <span class="text-muted module-text-sm">60 mins</span>
+                        </div>
+                        
+                        <a href="#" class="btn btn-primary-custom w-100 fw-semibold mb-4 btn-watch-action">Watch Again</a>
+                        
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="text-muted module-text-xs text-uppercase fw-bold">PROGRESS</span>
+                            <span class="text-muted module-text-xs fw-bold">100%</span>
+                        </div>
+                        <div class="progress custom-progress-bar">
+                            <div class="progress-bar bg-primary-green custom-progress-width-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="module-card card-active bg-white shadow-lg p-4 h-100">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge rounded-pill badge-primary-green">MODULE 03</span>
+                            <span class="badge rounded-pill badge-light-green">Unlocked</span>
+                        </div>
+                        <h4 class="fw-bold text-dark-green mb-4">Infertility Diagnostics & Workup</h4>
+                        
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <div class="d-flex align-items-center">
+                                <img src="https://ui-avatars.com/api/?name=Doc&background=random" alt="Speaker" class="speaker-avatar me-3 border">
+                                <div>
+                                    <span class="d-block text-muted module-text-xs">Speaker</span>
+                                    <span class="d-block fw-bold text-dark-green module-text-sm">Dr. Michael Vogt</span>
+                                </div>
+                            </div>
+                            <span class="text-muted module-text-sm">55 mins</span>
+                        </div>
+                        
+                        <a href="#" class="btn btn-primary-custom w-100 fw-bold mb-4 btn-watch-action">Watch Now</a>
+                        
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="text-muted module-text-xs text-uppercase fw-bold">PROGRESS</span>
+                            <span class="text-muted module-text-xs fw-bold">0%</span>
+                        </div>
+                        <div class="progress custom-progress-bar">
+                            <div class="progress-bar bg-primary-green custom-progress-width-0" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="module-card card-locked bg-white shadow-sm p-4 h-100">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge rounded-pill badge-locked text-muted">MODULE 04</span>
+                            <span class="badge rounded-pill badge-locked-status text-muted">Locked</span>
+                        </div>
+                        <h4 class="fw-bold text-muted mb-4">Advanced IVF Techniques</h4>
+                        
+                        <div class="d-flex justify-content-between align-items-center mb-4 opacity-50">
+                            <div class="d-flex align-items-center">
+                                <img src="https://ui-avatars.com/api/?name=Doc&background=random" alt="Speaker" class="speaker-avatar me-3 border">
+                                <div>
+                                    <span class="d-block text-muted module-text-xs">Speaker</span>
+                                    <span class="d-block fw-bold text-muted module-text-sm">Dr. Elena Rodriguez</span>
+                                </div>
+                            </div>
+                            <span class="text-muted module-text-sm">75 mins</span>
+                        </div>
+                        
+                        <button class="btn btn-locked w-100 fw-semibold mb-4" disabled>Locked</button>
+                        
+                        <div>
+                            <div class="d-flex justify-content-between mb-1 invisible">
+                                <span class="module-text-xs">PROGRESS</span>
+                            </div>
+                            <div class="progress custom-progress-bar opacity-50"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="module-card card-locked bg-white shadow-sm p-4 h-100">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge rounded-pill badge-locked text-muted">MODULE 05</span>
+                            <span class="badge rounded-pill badge-locked-status text-muted">Locked</span>
+                        </div>
+                        <h4 class="fw-bold text-muted mb-4">Ethics in Assisted Reproduction</h4>
+                        
+                        <div class="d-flex justify-content-between align-items-center mb-4 opacity-50">
+                            <div class="d-flex align-items-center">
+                                <img src="https://ui-avatars.com/api/?name=Doc&background=random" alt="Speaker" class="speaker-avatar me-3 border">
+                                <div>
+                                    <span class="d-block text-muted module-text-xs">Speaker</span>
+                                    <span class="d-block fw-bold text-muted module-text-sm">Prof. Linda Thompson</span>
+                                </div>
+                            </div>
+                            <span class="text-muted module-text-sm">40 mins</span>
+                        </div>
+                        
+                        <button class="btn btn-locked w-100 fw-semibold mb-4" disabled>Locked</button>
+                        
+                        <div>
+                            <div class="d-flex justify-content-between mb-1 invisible">
+                                <span class="module-text-xs">PROGRESS</span>
+                            </div>
+                            <div class="progress custom-progress-bar opacity-50"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="module-card card-locked bg-white shadow-sm p-4 h-100">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge rounded-pill badge-locked text-muted">MODULE 06</span>
+                            <span class="badge rounded-pill badge-locked-status text-muted">Locked</span>
+                        </div>
+                        <h4 class="fw-bold text-muted mb-4">Final Assessment & Certification</h4>
+                        
+                        <div class="d-flex justify-content-between align-items-center mb-4 opacity-50">
+                            <div class="d-flex align-items-center">
+                                <img src="https://ui-avatars.com/api/?name=Doc&background=random" alt="Speaker" class="speaker-avatar me-3 border">
+                                <div>
+                                    <span class="d-block text-muted module-text-xs">Board</span>
+                                    <span class="d-block fw-bold text-muted module-text-sm">ReproMed Faculty</span>
+                                </div>
+                            </div>
+                            <span class="text-muted module-text-sm">Exam</span>
+                        </div>
+                        
+                        <button class="btn btn-locked w-100 fw-semibold mb-4" disabled>Locked</button>
+                        
+                        <div>
+                            <div class="d-flex justify-content-between mb-1 invisible">
+                                <span class="module-text-xs">PROGRESS</span>
+                            </div>
+                            <div class="progress custom-progress-bar opacity-50"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="support-banner-section pb-5">
+        <div class="container">
+            <div class="support-banner bg-dark-green rounded-4 p-4 p-lg-5 text-white">
+                <div class="row align-items-center">
+                    <div class="col-lg-8 mb-4 mb-lg-0 pe-lg-5">
+                        <h3 class="fw-bold mb-3">Having trouble with a module?</h3>
+                        <p class="mb-0 text-white-50 support-banner-desc">Our academic support team is available 24/7 to help you with technical issues or course content queries.</p>
+                    </div>
+                    <div class="col-lg-4 text-center text-lg-end mt-4 mt-lg-0">
+                        <div class="d-flex flex-nowrap gap-2 gap-sm-3 justify-content-center justify-content-lg-end">
+                            <a href="#" class="btn btn-white-custom px-3 px-sm-4 py-2 fw-bold text-nowrap">Contact Support</a>
+                            <a href="#" class="btn btn-outline-white-custom px-3 px-sm-4 py-2 fw-semibold text-nowrap">View FAQs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="custom-footer py-4 mt-auto">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-3 col-md-12 mb-4 mb-lg-0 d-flex justify-content-center justify-content-lg-start">
+                    <a class="navbar-brand d-flex align-items-center" href="#">
+                        <div class="logo-box d-flex justify-content-center align-items-center rounded me-2">
+                            R
+                        </div>
+                        <span class="footer-brand-text">ReproMed Series</span>
+                    </a>
+                </div>
+                <div class="col-lg-5 col-md-12 mb-4 mb-lg-0">
+                    <ul class="list-unstyled d-flex flex-wrap justify-content-center gap-4 mb-0">
+                        <li><a href="#" class="footer-link">Support Portal</a></li>
+                        <li><a href="#" class="footer-link">CME Guidelines</a></li>
+                        <li><a href="#" class="footer-link">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-12 text-center text-lg-end">
+                    <span class="footer-text">© 2024 ReproMed Series. Clinical Education Portal.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script/modules.js"></script>
+</body>
+</html>
