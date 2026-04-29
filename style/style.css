@@ -23,6 +23,7 @@ body {
 }
 
 .text-dark-green { color: var(--dark-green); }
+
 .text-purple { color: var(--purple); }
 
 .text-primary-green { color: var(--primary-green) !important; }
@@ -48,10 +49,16 @@ body {
 .logo-box {
     width: 32px;
     height: 32px;
+    min-width: 32px;
+    min-height: 32px;
     background-color: var(--primary-green);
     color: white;
     font-weight: 800;
     font-size: 1.1rem;
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 }
 
 .brand-text {
@@ -256,8 +263,8 @@ body {
 }
 
 .custom-sidebar {
-    width: 260px; 
-    z-index: 1050; /* 1040 se 1050 kar diya taki mobile backdrop se hamesha upar rahe */
+    width: 280px; 
+    z-index: 1050; 
 }
 
 .sidebar-link {
@@ -284,7 +291,7 @@ body {
 .main-content {
     background-color: #f4f7f6; 
     min-width: 0; 
-    width: 100%; /* NAYA: Grid layout ko apni hadd (limit) me rakhne ke liye */
+    width: 100%; 
     overflow-x: hidden;
 }
 
@@ -401,10 +408,13 @@ label.error {
 }
 
 .custom-progress-width-33 { width: 33%; }
+
 .custom-progress-width-100 { width: 100%; }
+
 .custom-progress-width-0 { width: 0%; }
 
 .module-text-xs { font-size: 0.75rem; }
+
 .module-text-sm { font-size: 0.85rem; }
 
 .module-card {
@@ -698,6 +708,7 @@ label.error {
 }
 
 .text-sm { font-size: 0.85rem; }
+
 .text-xs { font-size: 0.7rem; }
 
 .tracker-item {
@@ -814,11 +825,6 @@ label.error {
     box-shadow: none;
 }
 
-/* =========================================
-   Naya Code: Dashboard Styles
-========================================= */
-
-/* Sidebar Profile Customizations */
 .sidebar-avatar {
     width: 48px;
     height: 48px;
@@ -837,7 +843,6 @@ label.error {
     color: var(--pink) !important;
 }
 
-/* Course Progress Timeline Tracker */
 .tracker-label {
     font-size: 0.7rem;
     letter-spacing: 0.5px;
@@ -878,7 +883,6 @@ label.error {
     background-color: #e2e8f0;
 }
 
-/* Stats Cards */
 .stat-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -898,7 +902,6 @@ label.error {
     letter-spacing: 0.5px;
 }
 
-/* Recent Activity Timeline */
 .activity-feed .activity-dot {
     width: 12px;
     height: 12px;
@@ -910,7 +913,6 @@ label.error {
     min-height: 25px;
 }
 
-/* Live Session Banner */
 .live-session-card {
     background: linear-gradient(135deg, #7a65d8, #5a4aa5);
 }
@@ -935,7 +937,6 @@ label.error {
     z-index: 0;
 }
 
-/* Custom Chart Legend */
 .legend-dot {
     width: 10px;
     height: 10px;
@@ -944,15 +945,14 @@ label.error {
 }
 
 .green-dot { background-color: var(--primary-green); }
+
 .purple-dot { background-color: var(--purple); }
 
-/* Chart Container constraints */
 .chart-container {
     position: relative;
     min-height: 300px;
 }
 
-/* Top Stat Badges */
 .quiz-stat-badge {
     min-width: 180px;
     border: 1px solid rgba(0,0,0,0.03);
@@ -969,14 +969,12 @@ label.error {
     opacity: 0.8;
 }
 
-/* Line Chart Container */
 .chart-container-line {
     position: relative;
     min-height: 250px;
     width: 100%;
 }
 
-/* Topic Proficiency Custom Progress Bars */
 .text-xs { font-size: 0.7rem; }
 
 .custom-progress-bar-light {
@@ -986,23 +984,19 @@ label.error {
 }
 
 .w-92 { width: 92%; }
+
 .w-78 { width: 78%; }
+
 .w-65 { width: 65%; }
 
-/* Recommendation Box */
 .recommendation-box {
-    background-color: #f0fdf4; /* Very light green tint */
+    background-color: #f0fdf4; 
 }
 
 .rec-icon {
     font-size: 1rem;
 }
 
-/* =========================================
-   Naya Code: Certificate Page Styles
-========================================= */
-
-/* Certificate Wrapper Animation */
 .certificate-wrapper {
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
@@ -1012,32 +1006,163 @@ label.error {
     box-shadow: 0 20px 40px rgba(0,0,0,0.08) !important;
 }
 
-/* Certificate Image Sizing */
 .certificate-img {
-    max-height: 65vh; /* Prevents image from getting too massive vertically */
+    max-height: 65vh; 
     object-fit: contain;
     width: 100%;
     display: block;
     margin: 0 auto;
-    background-color: #fafafa; /* In case of transparent PNG certificates */
+    background-color: #fafafa; 
 }
 
-/* Responsive adjustment for extra large screens */
-@media (min-width: 1400px) {
-    .certificate-img {
-        max-height: 70vh;
-    }
+.sidebar-scrollable-menu {
+    flex-grow: 1;
+    overflow-y: auto;
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
 }
 
-/* Responsive Fixes for Dashboard */
-@media (max-width: 991px) {
-    .dashboard-sidebar {
-        width: 280px !important;
-    }
-    .course-timeline-dots {
-        width: 100%; /* Take full width on mobile */
-        max-width: 300px;
-    }
+.sidebar-scrollable-menu::-webkit-scrollbar {
+    display: none;
+}
+
+.main-content {
+    background-color: #f4f7f6; 
+    min-width: 0; 
+    width: 100%; 
+    overflow-x: hidden;
+}
+
+.sidebar-avatar {
+    width: 48px;
+    height: 48px;
+}
+
+.sidebar-role-text {
+    font-size: 0.75rem;
+    letter-spacing: 0.3px;
+}
+
+.sidebar-logout-link {
+    transition: all 0.3s ease;
+}
+
+.sidebar-logout-link:hover {
+    color: #b02a37 !important; 
+    transform: translateX(4px); 
+}
+
+.tracker-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+}
+
+.course-timeline-dots {
+    height: 12px;
+    width: 250px;
+}
+
+.course-timeline-dots .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.course-timeline-dots .dot.done {
+    background-color: var(--primary-green);
+}
+
+.course-timeline-dots .dot.pending {
+    border: 2px solid #cbd5e1;
+    background-color: white;
+}
+
+.course-timeline-dots .line {
+    height: 2px;
+    flex-grow: 1;
+    margin: 0 4px;
+}
+
+.course-timeline-dots .line.done {
+    background-color: var(--primary-green);
+}
+
+.course-timeline-dots .line.pending {
+    background-color: #e2e8f0;
+}
+
+.stat-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.stat-icon-box {
+    width: 48px;
+    height: 48px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+.stat-badge {
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+}
+
+.activity-feed .activity-dot {
+    width: 12px;
+    height: 12px;
+}
+
+.activity-feed .activity-line {
+    width: 2px;
+    background-color: #e2e8f0;
+    min-height: 25px;
+}
+
+.live-session-card {
+    background: linear-gradient(135deg, #7a65d8, #5a4aa5);
+}
+
+.live-badge {
+    background-color: rgba(255,255,255,0.2);
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+    padding: 6px 12px;
+}
+
+.live-card-graphic {
+    min-height: 140px;
+}
+
+.live-card-bg-shape {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+    top: -50px;
+    right: -100px;
+    z-index: 0;
+}
+
+.legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.green-dot { background-color: var(--primary-green); }
+
+.purple-dot { background-color: var(--purple); }
+
+.chart-container {
+    position: relative;
+    min-height: 300px;
 }
 
 @media (max-width: 420px) {
@@ -1068,6 +1193,13 @@ label.error {
 }
 
 @media (max-width: 991px) {
+    
+
+    .course-timeline-dots {
+        width: 100%; 
+        max-width: 300px;
+    }
+
     .floating-card {
         left: 20px;
         bottom: 20px;
@@ -1100,190 +1232,26 @@ label.error {
     .video-thumbnail {
         height: 250px;
     }
+
+    
+    .course-timeline-dots {
+        width: 100%; 
+        max-width: 300px;
+    }
 }
 
-
-/* =========================================
-   Naya Code: Dashboard & Universal Sidebar Styles
-========================================= */
-
-/* NAYA: Desktop Sticky Sidebar Fix - Yeh Logout ko hamesha bottom me fix rakhega */
 @media (min-width: 992px) {
     .custom-sidebar {
         position: sticky;
         top: 0;
-        height: 100vh; /* Screen ki exact height */
+        height: 100vh; 
         max-height: 100vh;
-        overflow: hidden; /* Sidebar ko lamba hone se rokega */
+        overflow: hidden; 
     }
 }
 
-/* Menu items ko explicitly scrollable banane ke liye */
-.sidebar-scrollable-menu {
-    flex-grow: 1;
-    overflow-y: auto;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-}
-.sidebar-scrollable-menu::-webkit-scrollbar {
-    display: none;
-}
-
-
-/* NAYA: Main content limits to stop graph from breaking layout */
-.main-content {
-    background-color: #f4f7f6; 
-    min-width: 0; 
-    width: 100%; 
-    overflow-x: hidden;
-}
-
-/* Sidebar Profile Customizations */
-.sidebar-avatar {
-    width: 48px;
-    height: 48px;
-}
-
-.sidebar-role-text {
-    font-size: 0.75rem;
-    letter-spacing: 0.3px;
-}
-
-.sidebar-logout-link {
-    transition: all 0.3s ease;
-}
-
-.sidebar-logout-link:hover {
-    color: #b02a37 !important; /* Ye ek dark red color hai hover ke liye */
-    transform: translateX(4px); /* Halka sa right shift hone ka cool animation (Optional, aap chahein toh hata sakte hain) */
-}
-
-/* Course Progress Timeline Tracker */
-.tracker-label {
-    font-size: 0.7rem;
-    letter-spacing: 0.5px;
-}
-
-.course-timeline-dots {
-    height: 12px;
-    width: 250px;
-}
-
-.course-timeline-dots .dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    flex-shrink: 0;
-}
-
-.course-timeline-dots .dot.done {
-    background-color: var(--primary-green);
-}
-
-.course-timeline-dots .dot.pending {
-    border: 2px solid #cbd5e1;
-    background-color: white;
-}
-
-.course-timeline-dots .line {
-    height: 2px;
-    flex-grow: 1;
-    margin: 0 4px;
-}
-
-.course-timeline-dots .line.done {
-    background-color: var(--primary-green);
-}
-
-.course-timeline-dots .line.pending {
-    background-color: #e2e8f0;
-}
-
-/* 4 Stats Cards & Icon */
-.stat-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.stat-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-}
-
-/* NAYA: Stat Card ke white transparent icons ke liye clean CSS class */
-.stat-icon-box {
-    width: 48px;
-    height: 48px;
-    background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 12px;
-    margin-bottom: 1rem;
-}
-
-.stat-badge {
-    font-size: 0.7rem;
-    letter-spacing: 0.5px;
-}
-
-/* Recent Activity Timeline */
-.activity-feed .activity-dot {
-    width: 12px;
-    height: 12px;
-}
-
-.activity-feed .activity-line {
-    width: 2px;
-    background-color: #e2e8f0;
-    min-height: 25px;
-}
-
-/* Live Session Banner */
-.live-session-card {
-    background: linear-gradient(135deg, #7a65d8, #5a4aa5);
-}
-
-.live-badge {
-    background-color: rgba(255,255,255,0.2);
-    font-size: 0.65rem;
-    letter-spacing: 1px;
-    padding: 6px 12px;
-}
-
-.live-card-graphic {
-    min-height: 140px;
-}
-
-.live-card-bg-shape {
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
-    top: -50px;
-    right: -100px;
-    z-index: 0;
-}
-
-/* Custom Chart Legend */
-.legend-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    display: inline-block;
-}
-
-.green-dot { background-color: var(--primary-green); }
-.purple-dot { background-color: var(--purple); }
-
-/* Chart Container constraints */
-.chart-container {
-    position: relative;
-    min-height: 300px;
-}
-
-/* Responsive Fixes for Dashboard */
-@media (max-width: 991px) {
-    .dashboard-sidebar {
-        width: 280px !important;
-    }
-    .course-timeline-dots {
-        width: 100%; /* Take full width on mobile */
-        max-width: 300px;
+@media (min-width: 1400px) {
+    .certificate-img {
+        max-height: 70vh;
     }
 }

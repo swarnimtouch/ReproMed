@@ -15,57 +15,47 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg bg-white border-bottom d-lg-none sticky-top py-3">
-        <div class="container-fluid">
-            <a class="navbar-brand d-flex align-items-center ms-1" href="index.html">
-                <div class="logo-box logo-box-sm d-flex justify-content-center align-items-center rounded me-2">
+    <nav class="navbar navbar-expand-lg py-3 sticky-top bg-transparent-custom">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <div class="logo-box d-flex justify-content-center align-items-center rounded me-2">
                     R
                 </div>
-                <span class="brand-text fw-bold fs-6">ReproMed <span class="brand-text-purple">Series</span></span>
+                <span class="brand-text fw-bold">ReproMed <span class="brand-text-purple">Series</span></span>
             </a>
-
-            <button class="navbar-toggler border-0 shadow-none ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-label="Toggle sidebar">
+            
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainNav" aria-controls="mainNav" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="mainNav" aria-labelledby="mainNavLabel">
+                
+                <div class="offcanvas-header border-bottom">
+                    <h5 class="offcanvas-title fw-bold text-dark-green" id="mainNavLabel">Menu</h5>
+                    <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav ms-auto align-items-lg-center gap-3 gap-lg-4">
+                        <li class="nav-item">
+                            <a class="nav-link nav-link fw-semibold" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-medium" href="modules.html">Modules</a>
+                        </li>
+                        
+                        <li class="nav-item ms-lg-2 mt-3 mt-lg-0">
+                            <a class="btn btn-outline-nav rounded-pill px-4 fw-semibold w-100 w-lg-auto" href="login.html">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </nav>
 
     <div class="d-flex flex-column flex-lg-row min-vh-100">
         
-        <div class="offcanvas-lg offcanvas-end custom-sidebar bg-white border-end d-flex flex-column" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
-            <div class="offcanvas-header border-bottom d-lg-none">
-                <h5 class="offcanvas-title fw-bold text-dark-green" id="sidebarMenuLabel">Menu</h5>
-                <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu" aria-label="Close"></button>
-            </div>
-            
-            <div class="offcanvas-body flex-column p-0 flex-grow-1 d-flex overflow-hidden">
-                
-                <div class="d-none d-lg-flex align-items-center p-4 pb-0 mb-4">
-                    <div class="logo-box d-flex justify-content-center align-items-center rounded me-2">R</div>
-                    <span class="brand-text fw-bold">ReproMed <span class="brand-text-purple">Series</span></span>
-                </div>
-
-                
-                
-                <ul class="nav flex-column w-100 sidebar-nav-list flex-grow-1 overflow-y-auto">
-                    <li class="nav-item my-1">
-                        <a class="nav-link sidebar-link active" href="dashboard.html">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link sidebar-link" href="modules.html">Modules</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link sidebar-link" href="quiz.html">Quizzes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link sidebar-link">Registration</a>
-                    </li>
-                </ul>
-
-                
-                
-            </div>
-        </div>
+        
 
         <div class="main-content flex-grow-1 d-flex flex-column">
             
@@ -81,8 +71,8 @@
                                         <div class="logo-box form-header-logo d-flex justify-content-center align-items-center rounded-circle me-2">R</div>
                                         <span class="text-white fw-bold fs-5">ReproMed <span class="text-purple">Series</span></span>
                                     </div>
-                                    <h2 class="text-white fw-bold mb-2">Doctor Registration Form</h2>
-                                    <p class="text-white-50 small mb-0">Join the elite community of reproductive medicine specialists.</p>
+                                    <h2 class="text-white fw-bold mb-2" id="formMainTitle">Doctor Registration Form</h2>
+                                    <p class="text-white-50 small mb-0" id="formSubTitle">Join the elite community of reproductive medicine specialists.</p>
                                 </div>
                                 
                                 <div class="p-4 p-md-5">
@@ -142,7 +132,7 @@
                                         </div>
                                         
                                         <button type="submit" class="btn btn-primary-custom w-100 py-3 mb-3 fw-bold fs-6" id="submitRegBtn">
-                                            Register for ReproMed Series
+                                            Register
                                         </button>
                                         
                                         <div class="text-center mt-4">
@@ -162,9 +152,6 @@
                     </div>
                 </div>
             </section>
-
-            
-
         </div>
     </div>
 

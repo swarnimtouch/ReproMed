@@ -29,19 +29,6 @@ $(document).ready(function() {
             mciNumber: "Please enter your registration number"
         },
         
-        submitHandler: function(form) {
-            let $btn = $('#submitRegBtn');
-            let originalText = $btn.text();
-            
-            $btn.html('<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span> Processing...');
-            $btn.addClass('opacity-75').prop('disabled', true);
-            
-            setTimeout(function() {
-                $btn.text(originalText).removeClass('opacity-75').prop('disabled', false);
-                alert("Registration successful! Welcome to the ReproMed Series community.");
-                form.reset(); 
-            }, 1500);
-            return false; 
-        }
+        
     });
 });

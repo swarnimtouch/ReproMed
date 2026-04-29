@@ -1,6 +1,5 @@
 $(document).ready(function() {
     
-    // --- Chart.js Configuration for Quiz Performance Analysis ---
     const ctx = document.getElementById('quizChart');
     
     if (ctx) {
@@ -11,16 +10,16 @@ $(document).ready(function() {
                 datasets: [
                     {
                         label: 'Your Score',
-                        data: [92, 80, 88], // Dummy Data for Green Bar
-                        backgroundColor: '#1ca477', // var(--primary-green)
-                        borderRadius: 4, // Curved top edges like screenshot
+                        data: [92, 80, 88], 
+                        backgroundColor: '#1ca477', 
+                        borderRadius: 4, 
                         barPercentage: 0.6,
                         categoryPercentage: 0.8
                     },
                     {
                         label: 'Avg Peer Score',
-                        data: [78, 75, 82], // Dummy Data for Purple Bar
-                        backgroundColor: '#7a65d8', // var(--purple)
+                        data: [78, 75, 82], 
+                        backgroundColor: '#7a65d8', 
                         borderRadius: 4,
                         barPercentage: 0.6,
                         categoryPercentage: 0.8
@@ -32,7 +31,7 @@ $(document).ready(function() {
                 maintainAspectRatio: true,
                 plugins: {
                     legend: {
-                        display: false // We built a custom HTML legend for exact styling match
+                        display: false 
                     },
                     tooltip: {
                         backgroundColor: '#0b493c',
@@ -57,7 +56,7 @@ $(document).ready(function() {
                     },
                     x: {
                         grid: {
-                            display: false, // Hide vertical grid lines for cleaner look
+                            display: false,
                             drawBorder: false
                         },
                         ticks: {
