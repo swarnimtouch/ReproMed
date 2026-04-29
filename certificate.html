@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate | ReproMed Series</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-white border-bottom d-lg-none sticky-top py-3">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center ms-1" href="index.html">
+                <div class="logo-box logo-box-sm d-flex justify-content-center align-items-center rounded me-2">R</div>
+                <span class="brand-text fw-bold fs-6 text-nowrap">ReproMed <span class="brand-text-purple">Series</span></span>
+            </a>
+
+            <button class="navbar-toggler border-0 shadow-none ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-label="Toggle sidebar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="d-flex flex-column flex-lg-row min-vh-100">
+        
+        <div class="offcanvas-lg offcanvas-end custom-sidebar bg-white border-end d-flex flex-column" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
+            <div class="offcanvas-header border-bottom d-lg-none">
+                <h5 class="offcanvas-title fw-bold text-dark-green" id="sidebarMenuLabel">Menu</h5>
+                <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu" aria-label="Close"></button>
+            </div>
+            
+            <div class="offcanvas-body flex-column p-0 flex-grow-1 d-flex overflow-hidden">
+                
+                <div class="d-none d-lg-flex align-items-center p-4 pb-0 mb-4">
+                    <div class="logo-box d-flex justify-content-center align-items-center rounded me-2">R</div>
+                    <span class="brand-text fw-bold">ReproMed <span class="brand-text-purple">Series</span></span>
+                </div>
+
+                <div class="sidebar-profile-box d-flex align-items-center px-4 mb-4">
+                    <img src="https://ui-avatars.com/api/?name=Elena+R&background=random" alt="Profile" class="sidebar-avatar rounded-circle me-3 border shadow-sm">
+                    <div class="overflow-hidden">
+                        <h6 class="mb-0 fw-bold text-dark-green text-truncate">Dr. Elena R.</h6>
+                        <span class="text-muted d-block sidebar-role-text text-truncate">Reproductive Lead</span>
+                    </div>
+                </div>
+                
+                <ul class="nav flex-column w-100 sidebar-nav-list flex-grow-1 overflow-y-auto">
+                    <li class="nav-item my-1">
+                        <a class="nav-link sidebar-link" href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link sidebar-link" href="modules.html">Modules</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link sidebar-link" href="dasboard_quiz.html">Quizzes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link sidebar-link active" href="#">Certificate</a>
+                    </li>
+                </ul>
+
+                <div class="p-4 bg-white border-top mt-auto">
+                    <a href="login.html" class="text-danger text-decoration-none fw-medium sidebar-logout-link">Logout</a>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="main-content flex-grow-1 d-flex flex-column">
+            
+            <div class="container-fluid p-4 p-lg-5 flex-grow-1">
+                
+                <div class="row align-items-center mb-4 g-3">
+                    <div class="col-lg-8">
+                        <h1 class="fw-bolder text-dark-green mb-1">Your Certificate</h1>
+                        <p class="text-muted mb-0">Congratulations! You have successfully completed the 6-Month CME Series.</p>
+                    </div>
+                    <div class="col-lg-4 d-flex justify-content-lg-end">
+                        <button class="btn btn-primary-custom px-4 py-2 fw-semibold shadow-sm d-flex align-items-center justify-content-center" id="downloadCertBtn">
+                            <i class="fa-solid fa-download me-2"></i> Download PDF
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center mt-3 mt-md-5">
+                    <div class="col-xl-10 col-xxl-9">
+                        <div class="certificate-wrapper bg-white p-3 p-md-4 p-lg-5 rounded-4 shadow-sm border text-center">
+                            <img src="https://images.unsplash.com/photo-1589330694653-ded6df03f754?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Certificate of Completion" class="img-fluid border border-2 rounded-2 certificate-img shadow-sm">
+                            
+                            <div class="mt-4">
+                                <span class="d-inline-block badge-light-green rounded-pill text-dark-green fw-bold px-3 py-2 text-uppercase" style="letter-spacing: 1px; font-size: 0.75rem;">Issued: April 19, 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <footer class="custom-footer py-4 mt-auto w-100">
+                <div class="container-fluid px-4 px-lg-5">
+                    <div class="row align-items-center">
+                        <div class="col-lg-3 col-md-12 mb-4 mb-lg-0 d-flex justify-content-center justify-content-lg-start">
+                            <a class="navbar-brand d-flex align-items-center" href="#">
+                                <div class="logo-box d-flex justify-content-center align-items-center rounded me-2">R</div>
+                                <span class="footer-brand-text">ReproMed Series</span>
+                            </a>
+                        </div>
+                        <div class="col-lg-5 col-md-12 mb-4 mb-lg-0">
+                            <ul class="list-unstyled d-flex flex-wrap justify-content-center gap-4 mb-0">
+                                <li><a href="#" class="footer-link">Support Portal</a></li>
+                                <li><a href="#" class="footer-link">CME Guidelines</a></li>
+                                <li><a href="#" class="footer-link">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 col-md-12 text-center text-lg-end">
+                            <span class="footer-text">© 2024 ReproMed Series. Clinical Education Portal.</span>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script/certificate.js"></script>
+</body>
+</html>

@@ -17,10 +17,15 @@ body {
                 radial-gradient(circle at top right, var(--bg-gradient-end) 0%, transparent 40%);
     background-color: #f8fbfb;
     background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .text-dark-green { color: var(--dark-green); }
 .text-purple { color: var(--purple); }
+
+.text-primary-green { color: var(--primary-green) !important; }
 
 .mb-0.fw-bold.text-dark-green {
     font-weight: 700 !important; 
@@ -252,7 +257,7 @@ body {
 
 .custom-sidebar {
     width: 260px; 
-    z-index: 1040;
+    z-index: 1050; /* 1040 se 1050 kar diya taki mobile backdrop se hamesha upar rahe */
 }
 
 .sidebar-link {
@@ -278,6 +283,9 @@ body {
 
 .main-content {
     background-color: #f4f7f6; 
+    min-width: 0; 
+    width: 100%; /* NAYA: Grid layout ko apni hadd (limit) me rakhne ke liye */
+    overflow-x: hidden;
 }
 
 .form-card {
@@ -522,24 +530,553 @@ label.error {
     max-width: 700px;
 }
 
+.video-breadcrumb {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.video-breadcrumb a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.video-breadcrumb a:hover {
+    color: var(--primary-green);
+}
+
+.video-wrapper {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.video-thumbnail {
+    height: 450px;
+    object-fit: cover;
+    opacity: 0.85;
+}
+
+.video-play-btn {
+    width: 64px;
+    height: 64px;
+    background-color: var(--primary-green);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.video-play-btn:hover {
+    background-color: #178a63;
+    transform: translate(-50%, -50%) scale(1.08);
+}
+
+.video-time {
+    position: absolute;
+    bottom: 20px;
+    left: 24px;
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.custom-video-tabs {
+    border-bottom: 1px solid #e2e8f0;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.custom-video-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.custom-video-tabs .nav-link {
+    color: var(--text-muted);
+    border: none;
+    border-bottom: 2px solid transparent;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.75rem 1.5rem;
+    background-color: transparent;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+
+.custom-video-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.custom-video-tabs {
+    -ms-overflow-style: none;
+    scrollbar-width: none;  
+}
+
+.custom-video-tabs .nav-link.active {
+    color: var(--dark-green);
+    border-bottom: 2px solid var(--primary-green);
+}
+
+.custom-video-tabs .nav-link:hover:not(.active) {
+    color: var(--primary-green);
+}
+
+.video-desc-text {
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+.info-pill-box {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.2rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--dark-green);
+}
+
+.speaker-widget, .quiz-widget, .tracker-widget {
+    border-radius: 16px;
+    border: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+}
+
+.speaker-avatar-lg {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.speaker-designation {
+    color: var(--primary-green);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.quiz-widget {
+    background: linear-gradient(135deg, #816ade, #a18fff);
+    color: white;
+}
+
+.quiz-widget-text {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+.quiz-unlock-text {
+    font-size: 0.75rem;
+    opacity: 0.7;
+
+}
+
+.btn-pink-custom {
+    background-color: var(--pink);
+    color: white;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-pink-custom:hover {
+    background-color: #c0486c;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.text-sm { font-size: 0.85rem; }
+.text-xs { font-size: 0.7rem; }
+
+.tracker-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.25rem;
+}
+
+.tracker-item:last-child {
+    margin-bottom: 0;
+}
+
+.tracker-circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-right: 16px;
+}
+
+.tracker-circle.done {
+    background-color: var(--primary-green);
+}
+
+.tracker-circle.pending {
+    border: 2px solid #e2e8f0;
+    background-color: transparent;
+}
+
+.next-series-title {
+    color: #a0aec0;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.next-series-wrapper {
+    border: 1px dashed #cbd5e1;
+    border-radius: 16px;
+    background-color: #f8fafc; 
+}
+
+.next-series-img-placeholder {
+    width: 100px;
+    height: 70px;
+    background-color: #e2e8f0;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.quiz-assessment-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.quiz-timer-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 3px solid var(--primary-green);
+    font-size: 0.9rem;
+    background-color: transparent;
+}
+
+.quiz-question-text {
+    line-height: 1.6;
+    font-size: 1.15rem;
+}
+
+.quiz-option-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.quiz-option-card:hover {
+    border-color: #cbd5e1;
+    background-color: #f8fafc;
+}
+
+.quiz-option-card .option-text {
+    color: #64748b;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.quiz-option-card.selected {
+    background-color: #eef2ff; 
+    border-color: var(--purple);
+}
+
+.quiz-option-card.selected .option-text {
+    color: #475569;
+    font-weight: 500;
+}
+
+.custom-radio-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #cbd5e1;
+    background-color: transparent;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.quiz-option-card.selected .custom-radio-circle {
+    border: 6px solid var(--purple); 
+    background-color: #ffffff; 
+    box-shadow: none;
+}
+
+/* =========================================
+   Naya Code: Dashboard Styles
+========================================= */
+
+/* Sidebar Profile Customizations */
+.sidebar-avatar {
+    width: 48px;
+    height: 48px;
+}
+
+.sidebar-role-text {
+    font-size: 0.75rem;
+    letter-spacing: 0.3px;
+}
+
+.sidebar-logout-link {
+    transition: color 0.3s ease;
+}
+
+.sidebar-logout-link:hover {
+    color: var(--pink) !important;
+}
+
+/* Course Progress Timeline Tracker */
+.tracker-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+}
+
+.course-timeline-dots {
+    height: 12px;
+    width: 250px;
+}
+
+.course-timeline-dots .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.course-timeline-dots .dot.done {
+    background-color: var(--primary-green);
+}
+
+.course-timeline-dots .dot.pending {
+    border: 2px solid #cbd5e1;
+    background-color: white;
+}
+
+.course-timeline-dots .line {
+    height: 2px;
+    flex-grow: 1;
+    margin: 0 4px;
+}
+
+.course-timeline-dots .line.done {
+    background-color: var(--primary-green);
+}
+
+.course-timeline-dots .line.pending {
+    background-color: #e2e8f0;
+}
+
+/* Stats Cards */
+.stat-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.stat-icon-placeholder {
+    width: 40px;
+    height: 40px;
+}
+
+.stat-badge {
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+}
+
+/* Recent Activity Timeline */
+.activity-feed .activity-dot {
+    width: 12px;
+    height: 12px;
+}
+
+.activity-feed .activity-line {
+    width: 2px;
+    background-color: #e2e8f0;
+    min-height: 25px;
+}
+
+/* Live Session Banner */
+.live-session-card {
+    background: linear-gradient(135deg, #7a65d8, #5a4aa5);
+}
+
+.live-badge {
+    background-color: rgba(255,255,255,0.2);
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+    padding: 6px 12px;
+}
+
+.live-card-graphic {
+    min-height: 140px;
+}
+
+.live-card-bg-shape {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+    top: -50px;
+    right: -100px;
+    z-index: 0;
+}
+
+/* Custom Chart Legend */
+.legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.green-dot { background-color: var(--primary-green); }
+.purple-dot { background-color: var(--purple); }
+
+/* Chart Container constraints */
+.chart-container {
+    position: relative;
+    min-height: 300px;
+}
+
+/* Top Stat Badges */
+.quiz-stat-badge {
+    min-width: 180px;
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+.circle-icon {
+    width: 48px;
+    height: 48px;
+}
+
+.stat-title {
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+/* Line Chart Container */
+.chart-container-line {
+    position: relative;
+    min-height: 250px;
+    width: 100%;
+}
+
+/* Topic Proficiency Custom Progress Bars */
+.text-xs { font-size: 0.7rem; }
+
+.custom-progress-bar-light {
+    height: 6px;
+    background-color: #f1f5f9; 
+    border-radius: 10px;
+}
+
+.w-92 { width: 92%; }
+.w-78 { width: 78%; }
+.w-65 { width: 65%; }
+
+/* Recommendation Box */
+.recommendation-box {
+    background-color: #f0fdf4; /* Very light green tint */
+}
+
+.rec-icon {
+    font-size: 1rem;
+}
+
+/* =========================================
+   Naya Code: Certificate Page Styles
+========================================= */
+
+/* Certificate Wrapper Animation */
+.certificate-wrapper {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.certificate-wrapper:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08) !important;
+}
+
+/* Certificate Image Sizing */
+.certificate-img {
+    max-height: 65vh; /* Prevents image from getting too massive vertically */
+    object-fit: contain;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    background-color: #fafafa; /* In case of transparent PNG certificates */
+}
+
+/* Responsive adjustment for extra large screens */
+@media (min-width: 1400px) {
+    .certificate-img {
+        max-height: 70vh;
+    }
+}
+
+/* Responsive Fixes for Dashboard */
+@media (max-width: 991px) {
+    .dashboard-sidebar {
+        width: 280px !important;
+    }
+    .course-timeline-dots {
+        width: 100%; /* Take full width on mobile */
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 420px) {
+    .custom-video-tabs {
+        flex-wrap: wrap !important;
+        overflow-x: visible !important; 
+    }
+    
+    .custom-video-tabs .nav-item {
+        flex: 1 1 auto;
+        text-align: center;
+    }
+    
+    .custom-video-tabs .nav-link {
+        width: 100%;
+        padding: 0.75rem 1rem;
+    }
+}
+
 @media (max-width: 576px) {
     .hero-img {
         height: 300px;
     }
+
     .hero-subtitle {
         max-width: 100%;
     }
 }
 
 @media (max-width: 991px) {
-    
     .floating-card {
         left: 20px;
         bottom: 20px;
     }
+
     .hero-img {
         height: 400px;
     }
+
     .hero-title {
         font-size: 2.5rem; 
     }
@@ -558,5 +1095,195 @@ label.error {
     
     .offcanvas-body .nav-item:last-child {
         border-bottom: none;
+    }
+
+    .video-thumbnail {
+        height: 250px;
+    }
+}
+
+
+/* =========================================
+   Naya Code: Dashboard & Universal Sidebar Styles
+========================================= */
+
+/* NAYA: Desktop Sticky Sidebar Fix - Yeh Logout ko hamesha bottom me fix rakhega */
+@media (min-width: 992px) {
+    .custom-sidebar {
+        position: sticky;
+        top: 0;
+        height: 100vh; /* Screen ki exact height */
+        max-height: 100vh;
+        overflow: hidden; /* Sidebar ko lamba hone se rokega */
+    }
+}
+
+/* Menu items ko explicitly scrollable banane ke liye */
+.sidebar-scrollable-menu {
+    flex-grow: 1;
+    overflow-y: auto;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.sidebar-scrollable-menu::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* NAYA: Main content limits to stop graph from breaking layout */
+.main-content {
+    background-color: #f4f7f6; 
+    min-width: 0; 
+    width: 100%; 
+    overflow-x: hidden;
+}
+
+/* Sidebar Profile Customizations */
+.sidebar-avatar {
+    width: 48px;
+    height: 48px;
+}
+
+.sidebar-role-text {
+    font-size: 0.75rem;
+    letter-spacing: 0.3px;
+}
+
+.sidebar-logout-link {
+    transition: all 0.3s ease;
+}
+
+.sidebar-logout-link:hover {
+    color: #b02a37 !important; /* Ye ek dark red color hai hover ke liye */
+    transform: translateX(4px); /* Halka sa right shift hone ka cool animation (Optional, aap chahein toh hata sakte hain) */
+}
+
+/* Course Progress Timeline Tracker */
+.tracker-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+}
+
+.course-timeline-dots {
+    height: 12px;
+    width: 250px;
+}
+
+.course-timeline-dots .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.course-timeline-dots .dot.done {
+    background-color: var(--primary-green);
+}
+
+.course-timeline-dots .dot.pending {
+    border: 2px solid #cbd5e1;
+    background-color: white;
+}
+
+.course-timeline-dots .line {
+    height: 2px;
+    flex-grow: 1;
+    margin: 0 4px;
+}
+
+.course-timeline-dots .line.done {
+    background-color: var(--primary-green);
+}
+
+.course-timeline-dots .line.pending {
+    background-color: #e2e8f0;
+}
+
+/* 4 Stats Cards & Icon */
+.stat-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+/* NAYA: Stat Card ke white transparent icons ke liye clean CSS class */
+.stat-icon-box {
+    width: 48px;
+    height: 48px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+.stat-badge {
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+}
+
+/* Recent Activity Timeline */
+.activity-feed .activity-dot {
+    width: 12px;
+    height: 12px;
+}
+
+.activity-feed .activity-line {
+    width: 2px;
+    background-color: #e2e8f0;
+    min-height: 25px;
+}
+
+/* Live Session Banner */
+.live-session-card {
+    background: linear-gradient(135deg, #7a65d8, #5a4aa5);
+}
+
+.live-badge {
+    background-color: rgba(255,255,255,0.2);
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+    padding: 6px 12px;
+}
+
+.live-card-graphic {
+    min-height: 140px;
+}
+
+.live-card-bg-shape {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+    top: -50px;
+    right: -100px;
+    z-index: 0;
+}
+
+/* Custom Chart Legend */
+.legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.green-dot { background-color: var(--primary-green); }
+.purple-dot { background-color: var(--purple); }
+
+/* Chart Container constraints */
+.chart-container {
+    position: relative;
+    min-height: 300px;
+}
+
+/* Responsive Fixes for Dashboard */
+@media (max-width: 991px) {
+    .dashboard-sidebar {
+        width: 280px !important;
+    }
+    .course-timeline-dots {
+        width: 100%; /* Take full width on mobile */
+        max-width: 300px;
     }
 }

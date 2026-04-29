@@ -23,17 +23,6 @@ $(document).ready(function() {
         }
     );
 
-    $('.btn-watch-action').click(function(e) {
-        e.preventDefault();
-        let $btn = $(this);
-        let originalText = $btn.text();
-        
-        $btn.text('Loading Player...').addClass('opacity-75');
-        
-        setTimeout(function() {
-            $btn.text(originalText).removeClass('opacity-75');
-            alert("Video player modal will open here for this module.");
-        }, 800);
-    });
+    
 
 });

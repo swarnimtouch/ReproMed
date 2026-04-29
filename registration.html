@@ -32,32 +32,38 @@
 
     <div class="d-flex flex-column flex-lg-row min-vh-100">
         
-        <div class="offcanvas-lg offcanvas-end custom-sidebar registration-sidebar bg-white border-end" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
+        <div class="offcanvas-lg offcanvas-end custom-sidebar bg-white border-end d-flex flex-column" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
             <div class="offcanvas-header border-bottom d-lg-none">
                 <h5 class="offcanvas-title fw-bold text-dark-green" id="sidebarMenuLabel">Menu</h5>
                 <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu" aria-label="Close"></button>
             </div>
             
-            <div class="offcanvas-body flex-column p-0">
-                <div class="d-none d-lg-flex align-items-center p-4 mb-2">
+            <div class="offcanvas-body flex-column p-0 flex-grow-1 d-flex overflow-hidden">
+                
+                <div class="d-none d-lg-flex align-items-center p-4 pb-0 mb-4">
                     <div class="logo-box d-flex justify-content-center align-items-center rounded me-2">R</div>
                     <span class="brand-text fw-bold">ReproMed <span class="brand-text-purple">Series</span></span>
                 </div>
+
                 
-                <ul class="nav flex-column w-100 mt-2 mt-lg-0 sidebar-nav-list">
-                    <li class="nav-item">
-                        <a class="nav-link sidebar-link" href="#">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link sidebar-link" href="#">Modules</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link sidebar-link" href="#">Quizzes</a>
-                    </li>
+                
+                <ul class="nav flex-column w-100 sidebar-nav-list flex-grow-1 overflow-y-auto">
                     <li class="nav-item my-1">
-                        <a class="nav-link sidebar-link active" href="registration.html">Registration</a>
+                        <a class="nav-link sidebar-link active" href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link sidebar-link" href="modules.html">Modules</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link sidebar-link" href="quiz.html">Quizzes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link sidebar-link">Registration</a>
                     </li>
                 </ul>
+
+                
+                
             </div>
         </div>
 
@@ -72,7 +78,7 @@
                                 
                                 <div class="form-card-header text-center">
                                     <div class="d-flex justify-content-center align-items-center mb-3">
-                                        <div class="logo-box form-header-logo d-flex justify-content-center align-items-center rounded-circle me-2"></div>
+                                        <div class="logo-box form-header-logo d-flex justify-content-center align-items-center rounded-circle me-2">R</div>
                                         <span class="text-white fw-bold fs-5">ReproMed <span class="text-purple">Series</span></span>
                                     </div>
                                     <h2 class="text-white fw-bold mb-2">Doctor Registration Form</h2>

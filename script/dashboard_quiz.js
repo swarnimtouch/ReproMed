@@ -1,0 +1,85 @@
+$(document).ready(function() {
+    
+    // --- Chart.js Configuration for Quiz Performance History ---
+    const ctx = document.getElementById('historyChart');
+    
+    if (ctx) {
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                // X-Axis Labels (Quiz 1, Quiz 2 etc.)
+                labels: ['Quiz 1', 'Quiz 2', 'Quiz 3', 'Quiz 4', 'Quiz 5', 'Quiz 6', 'Quiz 7'],
+                datasets: [{
+                    label: 'Score',
+                    data: [75, 82, 70, 88, 85, 92, 95], // Mock performance data matching the curve
+                    borderColor: '#1ca477', // Primary green line
+                    borderWidth: 2.5,
+                    backgroundColor: 'rgba(28, 164, 119, 0.1)', // Light green gradient fill under the line
+                    fill: true,
+                    tension: 0.4, // Smooth curvy lines
+                    pointBackgroundColor: '#1ca477',
+                    pointBorderColor: '#ffffff',
+                    pointBorderWidth: 2,
+                    pointRadius: 4,
+                    pointHoverRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false, // Allows the chart to fill the container height
+                plugins: {
+                    legend: {
+                        display: false // Hide default legend
+                    },
+                    tooltip: {
+                        backgroundColor: '#0b493c',
+                        padding: 10,
+                        titleFont: { family: 'Poppins', size: 13 },
+                        bodyFont: { family: 'Poppins', size: 12 },
+                        displayColors: false,
+                        callbacks: {
+                            label: function(context) {
+                                return 'Score: ' + context.parsed.y + '%';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        grid: {
+                            color: '#f1f5f9',
+                            drawBorder: false
+                        },
+                        ticks: {
+                            font: { family: 'Poppins', size: 11 },
+                            color: '#a0aec0',
+                            stepSize: 20
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false,
+                            drawBorder: false
+                        },
+                        ticks: {
+                            font: { family: 'Poppins', size: 11 },
+                            color: '#a0aec0'
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    // Filter Buttons logic (Visual only for now)
+    $('.custom-filter-pills .nav-link').click(function(e) {
+        e.preventDefault();
+        // Reset all buttons to default white/muted state
+        $('.custom-filter-pills .nav-link').removeClass('active bg-primary-green text-white border-0').addClass('bg-white text-muted border');
+        
+        // Make clicked button primary green
+        $(this).removeClass('bg-white text-muted border').addClass('active bg-primary-green text-white border-0');
+    });
+});
