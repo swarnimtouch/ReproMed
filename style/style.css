@@ -950,7 +950,8 @@ label.error {
 
 .chart-container {
     position: relative;
-    min-height: 300px;
+    height: 300px; 
+    width: 100%;
 }
 
 .quiz-stat-badge {
@@ -1165,6 +1166,100 @@ label.error {
     min-height: 300px;
 }
 
+.custom-search-input {
+    transition: all 0.3s ease;
+}
+
+.custom-search-input:focus {
+    box-shadow: 0 0 0 3px rgba(28, 164, 119, 0.15) !important;
+    background-color: #ffffff !important;
+    border: 1px solid var(--primary-green) !important;
+}
+
+.cursor-pointer { cursor: pointer; }
+
+.profile-dropdown {
+    position: absolute;
+    top: 150%;
+    right: 0;
+    width: 220px;
+    background: #ffffff;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 1050;
+    border: 1px solid #e2e8f0;
+}
+
+.profile-dropdown::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    right: 25px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #ffffff;
+}
+
+.profile-info::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    height: 20px;
+}
+
+.profile-info:hover .profile-dropdown,
+.profile-info.active .profile-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    top: calc(100% + 15px);
+}
+
+.profile-info:hover .profile-chevron,
+.profile-info.active .profile-chevron { 
+    transform: rotate(180deg); 
+}
+
+.profile-chevron { transition: transform 0.3s ease; }
+
+.profile-dropdown .dropdown-item {
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.profile-dropdown .dropdown-item:hover { 
+    background-color: var(--light-green-bg); 
+    color: var(--dark-green) !important;
+}
+
+.top-header {
+    z-index: 1040;
+}
+
+.sidebar-brand-wrapper {
+    width: 280px;
+    min-width: 280px;
+    max-width: 280px;
+    padding-left: 28px;
+}
+
+.search-box {
+    max-width: 350px;
+}
+
+.header-profile-avatar {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
 @media (max-width: 420px) {
     .custom-video-tabs {
         flex-wrap: wrap !important;
@@ -1190,11 +1285,13 @@ label.error {
     .hero-subtitle {
         max-width: 100%;
     }
+    
+    .search-box {
+        max-width: 250px !important; 
+    }
 }
 
 @media (max-width: 991px) {
-    
-
     .course-timeline-dots {
         width: 100%; 
         max-width: 300px;
@@ -1232,7 +1329,6 @@ label.error {
     .video-thumbnail {
         height: 250px;
     }
-
     
     .course-timeline-dots {
         width: 100%; 
@@ -1243,9 +1339,9 @@ label.error {
 @media (min-width: 992px) {
     .custom-sidebar {
         position: sticky;
-        top: 0;
-        height: 100vh; 
-        max-height: 100vh;
+        top: 74px; 
+        height: calc(100vh - 74px); 
+        max-height: calc(100vh - 74px);
         overflow: hidden; 
     }
 }
